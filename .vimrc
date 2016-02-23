@@ -35,6 +35,9 @@ au BufNewFile,BufRead *.js,*.html,*.css
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
+"Set json filetypes explicitly for syntastic
+au BufRead,BufNewFile *.json set filetype=json
+
 "UTF-8 support
 set encoding=utf-8
 
