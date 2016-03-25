@@ -6,6 +6,9 @@ filetype plugin indent on
 let python_highlight_all=1
 syntax on
 
+"Set swap file
+set swapfile
+set dir=/home/vanbuski/.vim/swap
 
 "set split location
 set splitbelow
@@ -20,7 +23,6 @@ au BufNewFile,BufRead *.py
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
-    \ set textwidth=79 |
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix |
