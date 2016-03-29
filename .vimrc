@@ -8,7 +8,7 @@ syntax on
 
 "Set swap file
 set swapfile
-set dir=/home/vanbuski/.vim/swap
+set dir=/tmp/vim/swap
 
 "set split location
 set splitbelow
