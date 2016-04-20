@@ -34,6 +34,6 @@
 [submodule "bundle/colorschemes"]
 	path = bundle/colorschemes
 	url = https://github.com/flazz/vim-colorschemes.git
-[submodule "ansible-vim"]
-	path = ansible-vim
+[submodule "bundle/ansible-vim"]
+	path = bundle/ansible-vim
 	url = https://github.com/pearofducks/ansible-vim.git
