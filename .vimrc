@@ -33,6 +33,16 @@ au BufNewFile,BufRead *.js,*.html,*.css
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
 
+"Set tabs/indent/width for json files
+au BufNewFile,BufRead *.json
+    \ set autoindent |
+    \ set tw=78 |
+    \ set shiftwidth=2 |
+    \ set softtabstop=2 |
+    \ set tabstop=8 |
+    \ set expandtab |
+    \ set foldmethod=syntax |
+
 "Set char wrap to 72 for gitcommit
 au FileType gitcommit set tw=72
 
