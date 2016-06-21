@@ -26,6 +26,7 @@ au BufNewFile,BufRead *.py
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix |
+    \ set textwidth=79 |
 
 "Set tabs/indents/width on other files
 au BufNewFile,BufRead *.js,*.html,*.css
