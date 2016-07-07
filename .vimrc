@@ -73,9 +73,10 @@ autocmd vimenter * NERDTree
 "Visual settings
 let base16colorspace=256
 set background=dark
+colorscheme base16-eighties
 set number
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'murmur'
+let g:airline_theme = 'base16_eighties'
 
 "Key mappings
 map <C-n> :NERDTreeToggle<CR>
