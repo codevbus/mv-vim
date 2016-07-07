@@ -72,7 +72,6 @@ autocmd vimenter * NERDTree
 
 "Visual settings
 let base16colorspace=256
-colorscheme twilight256
 set background=dark
 set number
 let g:airline_powerline_fonts = 1
