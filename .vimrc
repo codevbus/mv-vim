@@ -44,6 +44,22 @@ au BufNewFile,BufRead *.json
     \ set expandtab |
     \ set foldmethod=syntax |
 
+"Define function to strip trailing whitespace
+function! <SID>StripTrailingWhitespaces()
+  " Save last search and cursor position
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " strip trailing whitespace
+  %s/\s\+$//e
+  " restore previous search and cursor position
+  let @/=_s
+  call cursor(l, c)
+endfunction
+
+"Automatically strip trailing whitespace before buffer write
+au BufWritePre *.py,*.js :call <SID>StripTrailingWhitespaces()
+
 "Set char wrap to 72 for gitcommit
 au FileType gitcommit set tw=72
 
