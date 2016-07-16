@@ -29,7 +29,7 @@ au BufNewFile,BufRead *.py
     \ set textwidth=79 |
 
 "Set tabs/indents/width on other files
-au BufNewFile,BufRead *.js,*.html,*.css
+au BufNewFile,BufRead *.js,*.html,*.css,*.sh
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
@@ -37,7 +37,7 @@ au BufNewFile,BufRead *.js,*.html,*.css
 "Set tabs/indent/width for json files
 au BufNewFile,BufRead *.json
     \ set autoindent |
-    \ set tw=78 |
+    \ set textwidth=78 |
     \ set shiftwidth=2 |
     \ set softtabstop=2 |
     \ set tabstop=8 |
