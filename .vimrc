@@ -95,13 +95,18 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme = 'base16_eighties'
 
 "Key mappings
+
+"Remove hardmap to line feed for CTRL-j
+let g:BASH_Ctrl_j = 'off'
+
+"Map CTRL-n to open/close NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
 "Enable folding with the spacebar
 nnoremap <space> za
 
-"split navigations
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+"Shortcut window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
