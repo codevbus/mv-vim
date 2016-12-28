@@ -2,8 +2,7 @@ execute pathogen#infect()
 
 filetype plugin indent on
 
-"Set leader key
-let mapleader="\"
+set nocompatible
 
 "Syntax hilighting
 let python_highlight_all=1
