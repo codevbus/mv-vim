@@ -8,6 +8,9 @@ set nocompatible
 let python_highlight_all=1
 syntax on
 
+"Set buffers to hide instead of close
+set hidden
+
 "Set swap file
 set swapfile
 set dir=~/.vimswap
