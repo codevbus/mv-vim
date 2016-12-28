@@ -26,7 +26,7 @@ au BufNewFile,BufRead *.py
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix |
-    \ set textwidth=79 |
+"    \ set textwidth=79 |
 
 "Set tabs/indents/width on other files
 au BufNewFile,BufRead *.js,*.html,*.css,*.sh
@@ -69,6 +69,9 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 "Set json filetypes explicitly for syntastic
 au BufRead,BufNewFile *.json set filetype=json
+
+"Set TeX to compile with XeLaTeX
+let g:Tex_CompileRule_pdf='xelatex --interaction=nonstopmode $*'
 
 "UTF-8 support
 set encoding=utf-8
