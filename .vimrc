@@ -92,8 +92,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_quiet_messages = { "type": "style" }
 
-"NERDTree 
-autocmd vimenter * NERDTree
+"Automatically enter NERDTree on startup
+"autocmd vimenter * NERDTree
 
 "Visual settings
 let base16colorspace=256
