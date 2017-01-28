@@ -76,8 +76,11 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 "Set json filetypes explicitly for syntastic
 au BufRead,BufNewFile *.json set filetype=json
 
-"Set TeX to compile with XeLaTeX
+"LaTeX settings
+let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_CompileRule_pdf='xelatex --interaction=nonstopmode $*'
+let g:Tex_ViewRule_pdf='acroread'
 
 "UTF-8 support
 set encoding=utf-8
