@@ -80,7 +80,7 @@ au BufRead,BufNewFile *.json set filetype=json
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_CompileRule_pdf='xelatex --interaction=nonstopmode $*'
-let g:Tex_ViewRule_pdf='acroread'
+let g:Tex_ViewRule_pdf='skim'
 
 "UTF-8 support
 set encoding=utf-8
