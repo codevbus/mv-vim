@@ -50,6 +50,9 @@ au BufNewFile,BufRead *.json
     \ set expandtab |
     \ set foldmethod=syntax |
 
+"Define additional filetypes for LaTeX plugin
+au BufNewFile,BufRead *.cls set filetype=tex
+
 "Define function to strip trailing whitespace
 function! <SID>StripTrailingWhitespaces()
   " Save last search and cursor position
