@@ -50,6 +50,9 @@ au BufNewFile,BufRead *.json
     \ set expandtab |
     \ set foldmethod=syntax |
 
+"Define additional filetypes for LaTeX plugin
+au BufNewFile,BufRead *.cls set filetype=tex
+
 "Define function to strip trailing whitespace
 function! <SID>StripTrailingWhitespaces()
   " Save last search and cursor position
@@ -76,8 +79,11 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 "Set json filetypes explicitly for syntastic
 au BufRead,BufNewFile *.json set filetype=json
 
-"Set TeX to compile with XeLaTeX
+"LaTeX settings
+let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_CompileRule_pdf='xelatex --interaction=nonstopmode $*'
+let g:Tex_ViewRule_pdf='skim'
 
 "UTF-8 support
 set encoding=utf-8
@@ -92,8 +98,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_quiet_messages = { "type": "style" }
 
-"NERDTree 
-autocmd vimenter * NERDTree
+"Automatically enter NERDTree on startup
+"autocmd vimenter * NERDTree
 
 "Visual settings
 let base16colorspace=256
