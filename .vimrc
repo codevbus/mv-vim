@@ -8,6 +8,9 @@ set nocompatible
 let python_highlight_all=1
 syntax on
 
+"Let vim-terraform override indentation for TF files
+let g:terraform_align=1
+
 "Set buffers to hide instead of close
 set hidden
 
