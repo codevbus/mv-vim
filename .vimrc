@@ -53,6 +53,11 @@ au BufNewFile,BufRead *.json
     \ set expandtab |
     \ set foldmethod=syntax |
 
+"Set tabs/indent/width for terraform files
+au BufNewFile,BufRead *.tf
+    \ set tabstop=2 |
+    \ set expandtab |
+
 "Define additional filetypes for LaTeX plugin
 au BufNewFile,BufRead *.cls set filetype=tex
 
