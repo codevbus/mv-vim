@@ -35,7 +35,6 @@ au BufNewFile,BufRead *.py
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix |
-"    \ set textwidth=79 |
 
 "Set tabs/indents/width on other files
 au BufNewFile,BufRead *.js,*.html,*.css,*.sh
@@ -52,6 +51,14 @@ au BufNewFile,BufRead *.json
     \ set tabstop=8 |
     \ set expandtab |
     \ set foldmethod=syntax |
+
+"Set tabs/indents/width for yaml files
+au BufNewFile,BufRead *.yaml,*.yml
+    \ set autoindent |
+    \ set shiftwidth=2 |
+    \ set softtabstop=2 |
+    \ set tabstop=2 |
+    \ set expandtab |
 
 "Set tabs/indent/width for terraform files
 au BufNewFile,BufRead *.tf
