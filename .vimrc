@@ -123,6 +123,8 @@ colorscheme base16-eighties
 set number
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'base16_eighties'
+let g:airline#extensions#tabline#enabled = 1
+
 
 "Key mappings
 
