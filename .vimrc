@@ -91,9 +91,6 @@ command! CLEAN retab | TEOL
 " http://stackoverflow.com/questions/1005/getting-root-permissions-on-a-file-inside-of-vi
 cmap w!! w !sudo tee >/dev/null %
 
-"Set char wrap to 72 for gitcommit
-au FileType gitcommit set tw=72
-
 "Flag bad whitespace
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
@@ -356,9 +353,6 @@ nmap \z :w<CR>:!open %<CR><CR>
 "Remove hardmap to line feed for CTRL-j
 let g:BASH_Ctrl_j = 'off'
 
-"Map CTRL-n to open/close NERDTree
-map <C-n> :NERDTreeToggle<CR>
-
 "Enable folding with the spacebar
 nnoremap <space> za
 vnoremap <space> zf
@@ -396,5 +390,8 @@ autocmd!
 au FileType json setlocal conceallevel=0 foldmethod=syntax foldlevel=999
 
 autocmd Filetype gitcommit setlocal tw=80
+
+"Set char wrap to 79 for python files
+au FileType *.py setlocal tw=79
 
 augroup END
