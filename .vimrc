@@ -394,4 +394,7 @@ autocmd Filetype gitcommit setlocal tw=80
 "Set char wrap to 79 for python files
 au FileType *.py setlocal tw=79
 
+"Remove wrap for markdown files
+au FileType *.md setlocal tw=0
+
 augroup END
