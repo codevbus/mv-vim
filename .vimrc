@@ -236,6 +236,14 @@ function! s:MaybeUpdateLightline()
   end
 endfunction
 
+"vim-go settings
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
 " Section: Color and syntax {{{1
 "--------------------------------------------------------------------------
 
@@ -396,5 +404,8 @@ au FileType *.py setlocal tw=79
 
 "Remove wrap for markdown files
 au FileType *.md setlocal tw=0
+
+"Set tab settings on Golang files for gofmt compatibility
+au FileType go setlocal shiftwidth=4 tabstop=4 softtabstop=4 noexpandtab nolist
 
 augroup END
