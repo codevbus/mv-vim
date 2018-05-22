@@ -338,6 +338,7 @@ highlight link markdownListMarker TodojA
 "Macros
 nmap \A :set formatoptions+=a<CR>:echo "autowrap enabled"<CR>
 nmap \M :set noexpandtab tabstop=8 softtabstop=4 shiftwidth=4<CR>
+nmap \R :NERDTreeFind<CR>
 nmap \T :set expandtab tabstop=8 shiftwidth=8 softtabstop=4<CR>
 nmap \a :set formatoptions-=a<CR>:echo "autowrap disabled"<CR>
 nmap \b :set nocin tw=80<CR>:set formatoptions+=a<CR>
