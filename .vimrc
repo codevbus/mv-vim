@@ -11,7 +11,8 @@ set backspace=indent,eol,start
 set cindent                 " Automatic program indenting
 set cinkeys-=0#             " Comments don't fiddle with indenting
 set cino=                   " See :h cinoptions-values
-set commentstring=\ \ #%s   " When folds are created, add them to this
+set commentstring=\ \ #%s   " When folds are created, add them to this\
+set complete+=k             " Enable dictionary completion
 set copyindent              " Make autoindent use the same chars as prev line
 set directory-=.            " Don't store temp files in cwd
 set encoding=utf8           " UTF-8 by default
@@ -39,7 +40,7 @@ set list                    " Show whitespace as special chars - see listchars
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:· " Unicode characters for various things
 set matchtime=2             " Tenths of second to hilight matching paren
 set modelines=5             " How many lines of head & tail to look for ml's
-silent! set mouse=nvc       " Use the mouse, but not in insert mode
+" silent! set mouse=nvc       " Use the mouse, but not in insert mode
 set nobackup                " No backups left after done editing
 set nu                      " Set line numbers to start
 set visualbell t_vb=        " No flashing or beeping at all
@@ -408,5 +409,8 @@ au FileType *.md setlocal tw=0
 
 "Set tab settings on Golang files for gofmt compatibility
 au FileType go setlocal shiftwidth=4 tabstop=4 softtabstop=4 noexpandtab nolist
+
+"Set autocomplete dictionary for files based on extension
+au FileType * execute 'setlocal dict+=~/.vim/dict/'.&filetype.'.txt'
 
 augroup END
