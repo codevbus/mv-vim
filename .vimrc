@@ -399,16 +399,16 @@ autocmd!
 " File types that get huge and slow
 au FileType json setlocal conceallevel=0 foldmethod=syntax foldlevel=999
 
-autocmd Filetype gitcommit setlocal tw=80
+au FileType gitcommit setlocal textwidth=80
 
-"Set char wrap to 79 for python files
-au FileType *.py setlocal tw=79
+" Python file indentation
+au BufNewFile,BufRead *.py setlocal tabstop=4  softtabstop=4  shiftwidth=4  textwidth=79  expandtab  fileformat=unix
 
 "Remove wrap for markdown files
-au FileType *.md setlocal tw=0
+au BufNewFile,BufRead *.md setlocal textwidth=0
 
 "Set tab settings on Golang files for gofmt compatibility
-au FileType go setlocal shiftwidth=4 tabstop=4 softtabstop=4 noexpandtab nolist
+au BufNewFile,BufRead .go setlocal shiftwidth=4 tabstop=4 softtabstop=4 noexpandtab nolist
 
 "Set autocomplete dictionary for files based on extension
 au FileType * execute 'setlocal dict+=~/.vim/dict/'.&filetype.'.txt'
