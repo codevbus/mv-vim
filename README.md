@@ -4,7 +4,15 @@ This repo stores my vim files/configs/plugins etc...
 
 It's a culmination of things that I've borrowed, cobbled together, and learned over the years.
 
-## **New Workflow - 10/24/17**
+## **01/08/19**
+
+I've added some tweaks, changes and minor plugin updates. I intend to make heavier use of ctags/tagging, as project codebases have gotten larger and more complex.
+
+This configuration absolutely requires Vim~8.0 to function now.
+
+Both Terminal and iTerm2 had issues with lag to a degree that it was impacting my productivity. I've since made the switch to [kitty](https://sw.kovidgoyal.net/kitty/index.html).
+
+## **10/24/17**
 
 I've made a major refresh to my plugins, vimrc, and overall workflow. Inspiration and configuration
 was taken from Ian Langworth's excellent [article](https://statico.github.io/vim3.html). Highly
