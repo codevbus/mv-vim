@@ -1,5 +1,3 @@
-
-
 " Section: Vim options {{{1
 "--------------------------------------------------------------------------
 
@@ -54,6 +52,7 @@ set shiftwidth=2            " Number of spaces to shift for autoindent or >,<
 set shortmess+=A            " Don't bother me when a swapfile exists
 set showbreak=              " Show for lines that have been wrapped, like Emacs
 set showmatch               " Hilight matching braces/parens/etc.
+set showtabline=2           " Show tab bar
 set sidescrolloff=3         " Keep cursor away from this many chars left/right
 set smartcase               " Lets you search for ALL CAPS
 set softtabstop=2           " Spaces 'feel' like tabs
@@ -118,7 +117,6 @@ function! Rename(name, bang)
     endif
 endfunction1
 
-
 " Section: Plugin settings {{{1
 "--------------------------------------------------------------------------
 
@@ -143,6 +141,7 @@ let spell_auto_type = ""
 
 " NERD_tree.vim
 let NERDTreeIgnore = ['\~$', '\.pyc$']
+autocmd vimenter * NERDTree
 
 " FZF (replaces Ctrl-P, FuzzyFinder and Command-T)
 set rtp+=/usr/local/opt/fzf
@@ -198,12 +197,17 @@ let g:lightline = {
 \ 'component_expand': {
 \   'linter_warnings': 'LightlineLinterWarnings',
 \   'linter_errors': 'LightlineLinterErrors',
-\   'linter_ok': 'LightlineLinterOK'
+\   'linter_ok': 'LightlineLinterOK',
+\   'buffers': 'lightline#bufferline#buffers'
 \ },
 \ 'component_type': {
 \   'readonly': 'error',
 \   'linter_warnings': 'warning',
-\   'linter_errors': 'error'
+\   'linter_errors': 'error',
+\   'buffers': 'tabsel'
+\ },
+\ 'tabline': {
+\   'left': [['buffers']], 'right': [['close']]
 \ },
 \ }
 
@@ -245,16 +249,41 @@ let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
+"tagbar settings
+let g:tagbar_compact = 1
+
+let g:tagbar_type_terraform = {
+\ 'ctagstype' : 'terraform',
+    \ 'kinds' : [
+    \ 'r:resources',
+    \ 'm:modules',
+    \ 'o:outputs',
+    \ 'v:variables',
+    \ 'f:tfvars'
+    \ ],
+    \ 'sort' : 0
+    \ }
+
+let g:tagbar_type_markdown = {
+    \ 'ctagstype' : 'markdown',
+    \ 'kinds' : [
+    \ 'h:Heading_L1',
+    \ 'i:Heading_L2',
+    \ 'k:Heading_L3'
+    \ ]
+    \ }
+
 " Section: Color and syntax {{{1
 "--------------------------------------------------------------------------
 
 " Make sure colored syntax mode is on, and make it Just Work with newer 256
 " color terminals like iTerm2.
 set background=dark
-base16colorspace=256 " Access colors present in 256 colorspace
+let base16colorspace=256 " Access colors present in 256 colorspace
 set termguicolors
 colorscheme base16-materia
 syntax on
+let &t_ut=''
 
 " window splits & ruler were too bright - change to white on grey
 " (shouldn't change GUI or non-color term appearance)
@@ -315,6 +344,9 @@ highlight link markdownCode Delimiter
 highlight link markdownCodeBlock Delimiter
 highlight link markdownListMarker TodojA
 
+" Folding highlight
+highlight Folded ctermbg=235 ctermfg=255
+
 " Section: Key mappings {{{1
 "--------------------------------------------------------------------------
 
@@ -355,8 +387,6 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-nmap ; :Buffers<CR>
-
 " Move between open buffers.
 map <C-n> :bnext<CR>
 map <C-p> :bprev<CR>
@@ -370,6 +400,12 @@ map g/ <Plug>(incsearch-stay)
 " (courtesy bufkill.vim)
 nmap <Esc>w :BD<CR>
 nmap ∑ :BD<CR>
+
+" Open vimrc for editing in a new buffer
+map <leader>vm :e $MYVIMRC<CR>
+
+" Source vimrc
+map <leader>sv :source $MYVIMRC<CR>
 
 " Section: File types {{{1
 " "--------------------------------------------------------------------------
@@ -394,5 +430,8 @@ au BufNewFile,BufRead .go setlocal shiftwidth=4 tabstop=4 softtabstop=4 noexpand
 
 "Set autocomplete dictionary for files based on extension
 au FileType * execute 'setlocal dict+=~/.vim/dict/'.&filetype.'.txt'
+
+"Auto open tagbar if file is supported
+autocmd FileType * nested :call tagbar#autoopen(0)
 
 augroup END

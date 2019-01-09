@@ -79,3 +79,6 @@
 [submodule "bundle/vim-flake8"]
 	path = bundle/vim-flake8
 	url = https://github.com/nvie/vim-flake8
+[submodule "lightline-bufferline"]
+	path = lightline-bufferline
+	url = https://github.com/mengelbrecht/lightline-bufferline
