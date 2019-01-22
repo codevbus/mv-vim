@@ -82,3 +82,6 @@
 [submodule "lightline-bufferline"]
 	path = lightline-bufferline
 	url = https://github.com/mengelbrecht/lightline-bufferline
+[submodule "bundle/vimtex"]
+	path = bundle/vimtex
+	url = https://github.com/lervag/vimtex.git

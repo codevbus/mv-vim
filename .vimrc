@@ -273,6 +273,9 @@ let g:tagbar_type_markdown = {
     \ ]
     \ }
 
+"Disable LaTex Box in vim-polyglot for VimTeX
+let g:polyglot_disabled = ['latex']
+
 " Section: Color and syntax {{{1
 "--------------------------------------------------------------------------
 
