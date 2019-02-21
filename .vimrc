@@ -420,13 +420,13 @@ au FileType json setlocal conceallevel=0 foldmethod=syntax foldlevel=999
 au FileType gitcommit setlocal textwidth=80
 
 " Python file indentation
-au BufNewFile,BufRead *.py setlocal tabstop=4  softtabstop=4  shiftwidth=4  textwidth=79  expandtab  fileformat=unix
+au FileType py setlocal tabstop=4  softtabstop=4  shiftwidth=4  textwidth=79  expandtab  fileformat=unix
 
 "Remove wrap for markdown files
-au BufNewFile,BufRead *.md setlocal textwidth=0
+au FileType md setlocal textwidth=0
 
 "Set tab settings on Golang files for gofmt compatibility
-au BufNewFile,BufRead .go setlocal shiftwidth=4 tabstop=4 softtabstop=4 noexpandtab nolist
+au FileType go setlocal shiftwidth=4 tabstop=4 softtabstop=4 noexpandtab nolist
 
 "Set autocomplete dictionary for files based on extension
 au FileType * execute 'setlocal dict+=~/.vim/dict/'.&filetype.'.txt'
