@@ -121,8 +121,8 @@ endfunction1
 "--------------------------------------------------------------------------
 
 " A new Vim package system
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
+source ~/.config/vim/bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect('~/.config/vim/bundle/{}')
 call pathogen#helptags()
 
 " for any plugins that use this, make their keymappings use comma
