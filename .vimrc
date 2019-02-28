@@ -48,6 +48,7 @@ set ruler                   " Show row/col and percentage
 set scroll=4                " Number of lines to scroll with ^U/^D
 set scrolloff=15            " Keep cursor away from this many chars top/bot
 set sessionoptions-=options " Don't save runtimepath in Vim session (see tpope/vim-pathogen docs)
+set shell=/usr/local/bin/zsh "Set terminal shell to same as login
 set shiftwidth=2            " Number of spaces to shift for autoindent or >,<
 set shortmess+=A            " Don't bother me when a swapfile exists
 set showbreak=              " Show for lines that have been wrapped, like Emacs
@@ -147,9 +148,9 @@ autocmd vimenter * NERDTree
 set rtp+=/usr/local/opt/fzf
 set rtp+=~/.fzf
 nmap ; :Buffers<CR>
-nmap <Leader>r :Tags<CR>
-nmap <Leader>t :Files<CR>
-nmap <Leader>a :Ag<CR>
+nmap <Leader>t :Tags<CR>
+nmap <Leader>f :Files<CR>
+nmap <Leader>r :Rg<CR>
 
 " ack -> ag
 let g:ackprg = 'ag --vimgrep'
@@ -275,6 +276,10 @@ let g:tagbar_type_markdown = {
 
 "Disable LaTex Box in vim-polyglot for VimTeX
 let g:polyglot_disabled = ['latex']
+
+"vimwiki
+let g:vimwiki_list = [{'path': '~/Documents/notes/'}]
+let g:vimwiki_list = [{'path': '~/Documents/notes/', 'syntax': 'markdown', 'ext': '.md'}]
 
 " Section: Color and syntax {{{1
 "--------------------------------------------------------------------------
