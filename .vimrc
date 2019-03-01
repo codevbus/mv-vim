@@ -142,7 +142,6 @@ let spell_auto_type = ""
 
 " NERD_tree.vim
 let NERDTreeIgnore = ['\~$', '\.pyc$']
-let g:NERDTreeFileNode.GetSelected()
 autocmd vimenter * NERDTree
 
 " FZF (replaces Ctrl-P, FuzzyFinder and Command-T)
