@@ -142,7 +142,7 @@ let spell_auto_type = ""
 
 " NERD_tree.vim
 let NERDTreeIgnore = ['\~$', '\.pyc$']
-autocmd vimenter * NERDTree
+autocmd! VimEnter * NERDTree | wincmd w
 
 " FZF (replaces Ctrl-P, FuzzyFinder and Command-T)
 set rtp+=/usr/local/opt/fzf
@@ -163,10 +163,6 @@ let g:gitgutter_sign_added = '∙'
 let g:gitgutter_sign_modified = '∙'
 let g:gitgutter_sign_removed = '∙'
 let g:gitgutter_sign_modified_removed = '∙'
-
-" supertab
-let g:SuperTabLongestEnhanced=1
-let g:SuperTabLongestHighlight=1
 
 " Zenburn
 let g:zenburn_high_Contrast = 1
@@ -251,6 +247,7 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
 "tagbar settings
+let g:tagbar_use_universal_ctags = 1
 let g:tagbar_compact = 1
 
 let g:tagbar_type_terraform = {
@@ -435,6 +432,9 @@ au FileType md setlocal textwidth=0
 
 "Set tab settings on Golang files for gofmt compatibility
 au FileType go setlocal shiftwidth=4 tabstop=4 softtabstop=4 noexpandtab nolist
+
+"Set tab settings for TF files
+au FileType tf setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
 "Set autocomplete dictionary for files based on extension
 au FileType * execute 'setlocal dict+=~/.vim/dict/'.&filetype.'.txt'
