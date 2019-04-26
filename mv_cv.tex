@@ -1,0 +1,216 @@
+%-------------------------
+% Resume in Latex
+% Original Author : Sourabh Bajaj
+% Content: Mike Vanbuskirk
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\href{https://sysengcooking.com}{\Large Mike Vanbuskirk}} & Email : \href{mailto:mvanbus43@gmail.com}{mvanbus43@gmail.com}\\
+  \href{https://sysengcooking.com}{https://sysengcooking.com}\\
+\end{tabular*}
+
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Western Governor's University}{Salt Lake City, UT}
+      {Bachelor of Science in Network Design and Management}{Sep. 2009 -- Sep. 2012}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Salesforce}{San Francisco, CA}
+      {Lead DevOps Engineer}{Feb 2019 - Present}
+      \resumeItemListStart
+        \resumeItem{DevOps}
+          {Member of DevOps team responsible for supporting Desk.com infrastructure, as well as
+          multi-provider messaging infrastructure. Deployed highly scalable infrastructure as code and CI/CD.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Apptio}{Bellevue, WA}
+      {Senior DevOps Engineer}{Dec 2017 - Feb 2019}
+      \resumeItemListStart
+        \resumeItem{Terraform}
+          {Utilize CI/CD to deploy Terraform-defined SSO access/authorization infrastructure in AWS
+          IAM.}
+        \resumeItem{Puppet}
+          {Deploy Production-Tier infrastructure changes internally and to customers via Puppet.}
+        \resumeItem{Operations}
+          {Support critical company infrastructure and provide break/fix and outage mitigation.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Disney}{Seattle, WA}
+      {Senior Systems Engineer}{Jul 2016 - Dec 2017}
+      \resumeItemListStart
+        \resumeItem{Chef}
+          {Utilized Chef for configuration management and deployment of Tier-1 services.}
+        \resumeItem{Terraform}
+          {Deployed application stacks via Terraform, including a greenfield AppSec service utilizing AWS ECS.}
+        \resumeItem{Docker}
+          {Migrated legacy application infrastructure to Docker and ECS, as well as greenfield deployments.}
+        \resumeItem{Packer}
+          {Deployed automated AMI building workflow utilizing Packer, ECS, and Terraform.}
+        \resumeItem{DataDog}
+          {Created real-time metric/operational status dashboard for Tier-1 Geo-IP streaming service.}
+        \resumeItem{HA Deployment}
+          {Designed and deployed infrastructure for highly-available Tier-1 Geo-IP streaming service
+            utilized by major sports media national streaming.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Amazon}{Seattle, WA}
+      {Technical Operations Team Lead}{Mar 2016 - Jul 2016}
+      \resumeItemListStart
+        \resumeItem{Leadership}
+          {Ensure team is delivering on SLAs and operational goals.}
+        \resumeItem{Project Management}
+          {AGILE based project management and roadmap planning.}
+        \resumeItem{Hiring}
+          {Manage hiring/screening/recruiting pipeline for Seattle team.}
+        \resumeItem{Operations}
+          {Point of contact for escalation and ongoing service/event issues.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Amazon}{Seattle, WA}
+      {Operations Engineer}{Aug 2014 - Jul 2016}
+      \resumeItemListStart
+        \resumeItem{Operations}
+          {Event/incident management for Amazon.com and AWS services.}
+        \resumeItem{Netscaler}
+          {Configured customer-facing application fabric on Citrix Netscalers for services like Amazon.com, AWS, IMDB etc...}
+        \resumeItem{Metrics}
+          {Owned configuration and management of operational dashboard for AWS services.}
+        \resumeItem{Process}
+          {Helped develop multi-team operational process, allowed DDOS response team to launch months early.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Level (3)}{Tulsa, OK}
+      {CDN/NOC Technician/Linux Administrator}{Jun 2013 - Aug 2014}
+      \resumeItemListStart
+        \resumeItem{Operations}
+          {Primary point of contact for monitoring/maintenance of global CDN with several thousand
+            Linux nodes.}
+        \resumeItem{Bash}
+          {Wrote Bash script to deliver nightly report on nodes generating the highest amount of
+            alerts.}
+        \resumeItem{Linux}
+          {Responsible for diagnosing and troubleshooting a variety of Linux performance issues in
+            a globally distributed system.}
+        \resumeItem{Java}
+          {Diagnosis and troubleshooting of Java-based application infrastructure.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------------
+%\section{Projects}
+%  \resumeSubHeadingListStart
+%    \resumeSubItem{}
+%      {}
+%    \resumeSubItem{}
+%      {}
+%    \resumeSubItem{}
+%      {}
+%    \resumeSubItem{}
+%      {}
+%  \resumeSubHeadingListEnd
+
+
+%--------TECHNICAL SKILLS------------
+\section{Technical Skills}
+  \resumeSubHeadingListStart
+    \item{
+      \textbf{Languages}{: Python, Bash, JSON, YAML}
+    }
+      \hfill
+    \item{
+      \textbf{Technologies}{: AWS, Git, F5 BigIP, Citrix Netscaler, Docker, Terraform, Kubernetes,
+        Chef, Puppet, Ansible, Consul, Nomad, Vagrant, Packer, TravisCI, New Relic, Datadog, Tomcat,
+        Apache, 12-Factor Design}
+    }
+  \resumeSubHeadingListEnd
+
+
+%-------------------------------------------
+\end{document}
+
